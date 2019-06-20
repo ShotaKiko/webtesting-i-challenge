@@ -5,16 +5,20 @@ module.exports = {
   get,
 };
 
-function succeed(item) {
-  return { ...item };
+function succeed(lvl) {
+  if(lvl === 20){
+    return lvl = lvl
+  } else{
+    return lvl = lvl + 1
+  }
 }
 
 function fail(item) {
   return { ...item };
 }
 
-function repair(item) {
-  return  item = 100 ;
+function repair(durability) {
+  return  durability = 100 ;
 }
 
 function get(item) {
