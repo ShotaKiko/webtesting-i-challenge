@@ -13,8 +13,19 @@ function succeed(lvl) {
   }
 }
 
-function fail(item) {
-  return { ...item };
+function fail(lvl, durability) {
+  if( lvl >= 15){
+    const condition = (durability <= 10) ? 0 : (durability - 10)
+    if( lvl > 16){
+      const newEnhLvl = lvl- 1
+      return newEnhLvl
+    }
+    return condition
+  } else if (lvl <15 ){
+    const condition = durability <=5 ? 0 : durability - 5
+    return condition
+  }
+  // return { ...item };
 }
 
 function repair(durability) {
