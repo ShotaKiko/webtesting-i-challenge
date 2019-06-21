@@ -68,6 +68,18 @@ describe('the enhancer', () => {
             expect(enhancer.fail(16, 7)).toBe(0)
         })
         
+        it('should lower decrement enh lvl by 1 if enh lvl is >16', () => {
+            const masterSword = {
+                name: 'Master Sword',
+                durability: 20,
+                enhancementLVL: 18
+            }
+            const enh = masterSword.enhancementLVL
+            const condition = masterSword.durability
+
+            expect(enhancer.fail(enh, condition)).toBe(enh -1, condition - 10)
+            expect(enhancer.fail(18, 9)).toBe(17, 0)
+        })
     })
 
 
