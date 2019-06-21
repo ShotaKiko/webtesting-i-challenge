@@ -33,5 +33,9 @@ function repair(durability) {
 }
 
 function get(item) {
-  return { ...item };
+  if(item.enhancementLVL === 0){
+    return item.name;
+  } else{
+    return `${item.name} [+${item.enhancementLVL}]`
+  }
 }

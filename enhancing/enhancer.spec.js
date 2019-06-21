@@ -82,7 +82,24 @@ describe('the enhancer', () => {
         })
     })
 
-
-
-
+    describe('the get item function', () =>  {
+        it('should just return the original name of the item', () => {
+            const masterSword = {
+                name: 'Master Sword',
+                durability: 20,
+                enhancementLVL: 0
+            }
+            expect(enhancer.get(masterSword)).toBe(masterSword.name)
+        })
+        
+        it('should return name [+enhlvl] if enh > 0', () => {
+            const masterSword = {
+                name: 'Master Sword',
+                durability: 20,
+                enhancementLVL: 2
+            }
+            expect(enhancer.get(masterSword))
+            .toBe(`${masterSword.name} [+${masterSword.enhancementLVL}]`)
+        })
+    })
 })
